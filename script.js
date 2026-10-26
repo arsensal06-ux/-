@@ -20,6 +20,23 @@ if (window.scrollY > 0) window.scrollTo(0, 0);
 const openingScene = document.querySelector('.opening-scene');
 const curtainPanels = [...document.querySelectorAll('.curtain-panel')];
 
+let touchStartY = null;
+let mobileOpened = false;
+
+function openCurtainsOnSwipe(event) {
+  if (window.innerWidth > 600 || mobileOpened || !event.touches?.length) return;
+  const y = event.touches[0].clientY;
+  if (touchStartY !== null && touchStartY - y > 18) {
+    mobileOpened = true;
+    openingScene?.style.setProperty('--open-progress', '1');
+    curtainPanels.forEach((panel) => {
+      const direction = panel.classList.contains('curtain-left') ? -1 : 1;
+      panel.style.transform = `translate3d(${direction * 110}%, 0, 0)`;
+    });
+  }
+  touchStartY = y;
+}
+
 function updateOpening() {
   if (!openingScene || curtainPanels.length !== 2) return;
   const travel = openingScene.offsetHeight - window.innerHeight;
@@ -33,5 +50,7 @@ function updateOpening() {
 }
 
 window.addEventListener('scroll', updateOpening, { passive: true });
+window.addEventListener('touchstart', (event) => { touchStartY = event.touches?.[0]?.clientY ?? null; }, { passive: true });
+window.addEventListener('touchmove', openCurtainsOnSwipe, { passive: true });
 window.addEventListener('resize', updateOpening);
 updateOpening();
