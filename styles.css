@@ -92,3 +92,12 @@ body{overflow-x:clip}
   .opening-prompt{margin-top:48px}
   .site-footer{grid-template-columns:1fr 1fr}
 }
+
+
+/* Full-screen mobile opening with a soft fade into the page background */
+@media(max-width:600px){
+  .opening-sticky{background:#d8cbbb}
+  .opening-art{object-fit:cover;object-position:62% center;transform:scale(1.02)}
+  .opening-sticky:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,#d8cbbb 0%,rgba(216,203,187,.72) 9%,transparent 24%,transparent 76%,rgba(216,203,187,.72) 91%,#d8cbbb 100%)}
+  .opening-copy{z-index:6;text-shadow:0 1px 14px rgba(244,239,229,.55)}
+}
