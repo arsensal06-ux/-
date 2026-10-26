@@ -78,3 +78,17 @@ body{overflow-x:clip}
   .button{min-height:48px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* Phone composition: show the full opening artwork and keep every section readable */
+@media(max-width:600px){
+  .opening-art{object-fit:contain;object-position:center;background:#d8cbbb}
+  .curtain-panel>img{object-fit:cover;object-position:center}
+  .hero-visual>img,.scent-photo img{object-fit:cover}
+  .product-image img{object-fit:contain;background:#e4ddd1}
+  .product-image{background:#e4ddd1}
+  .product-tag{font-size:9px}
+  .opening-copy{padding:24px 18px}
+  .opening-prompt{margin-top:48px}
+  .site-footer{grid-template-columns:1fr 1fr}
+}
