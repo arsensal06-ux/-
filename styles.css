@@ -48,3 +48,11 @@ body{background:var(--paper);color:var(--ink)}
  .curtain-left:after,.curtain-right:after{width:8vw}
 }
 @media(prefers-reduced-motion:reduce){.product-image img{transition:none}}
+
+/* Reliable high priority curtain texture with a warm fallback while it loads */
+.opening-sticky{background:#d8cbbb}
+.opening-art{z-index:0}
+.curtain-panel{display:block;overflow:hidden;background:#c7b9a7;background-image:none}
+.curtain-panel>img{position:absolute;top:0;width:200%;height:100%;max-width:none;object-fit:cover;display:block}
+.curtain-left>img{left:0}
+.curtain-right>img{right:0}
