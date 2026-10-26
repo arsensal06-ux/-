@@ -14,7 +14,10 @@ navigation.querySelectorAll('a').forEach((link) => {
   });
 });
 
-// Start from the entrance even when a mobile browser restores the previous scroll position.\nif (window.scrollY > 0) window.scrollTo(0, 0);\n\nconst openingScene = document.querySelector('.opening-scene');
+// Start from the entrance even when a mobile browser restores the previous scroll position.
+if (window.scrollY > 0) window.scrollTo(0, 0);
+
+const openingScene = document.querySelector('.opening-scene');
 const curtainPanels = [...document.querySelectorAll('.curtain-panel')];
 
 function updateOpening() {
