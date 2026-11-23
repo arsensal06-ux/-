@@ -142,3 +142,10 @@ body{overflow-x:clip}
 /* Keep the full product photograph inside its frame at every screen width. */
 .product-image { background: #e4ddd1; }
 .hero-visual > img, .scent-photo img { object-fit: contain; object-position: center; }
+
+/* Three products with consistent image frames. */
+.catalog-three { gap: clamp(16px, 3vw, 44px); }
+.catalog-three .product-card-tall .product-image { height: auto; aspect-ratio: 4 / 5; }
+@media (min-width: 900px) {
+  .catalog-three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
