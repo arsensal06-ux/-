@@ -15,7 +15,7 @@ navigation.querySelectorAll('a').forEach((link) => {
 });
 
 // Start from the entrance even when a mobile browser restores the previous scroll position.
-if (window.scrollY > 0) window.scrollTo(0, 0);
+if (!location.hash && window.scrollY > 0) window.scrollTo(0, 0);
 
 const openingScene = document.querySelector('.opening-scene');
 const curtainPanels = [...document.querySelectorAll('.curtain-panel')];
