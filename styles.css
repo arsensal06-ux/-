@@ -119,3 +119,24 @@ body{overflow-x:clip}
  .film-copy h2{font-size:clamp(42px,11vw,56px)}
  .film-frame{max-width:420px}
 }
+
+.brand-name { display: block; font-family: Georgia, serif; letter-spacing: -.045em; }
+.brand-subtitle { display: block; margin-top: 4px; font: 600 9px/1.2 Arial, sans-serif; letter-spacing: .075em; }
+
+:root { --ink: #36271e; --paper: #f7f0e4; --line: rgba(67, 47, 31, .17); }
+.announcement, .site-footer, .quote-band { background: #36271e; }
+.site-header { background: var(--paper); }
+.wordmark .brand-name { font-style: normal; }
+.hero { background: #422d20; }
+.hero-description { color: #e0cdb9; }
+.hero h1 em, .quote-band em { color: #e9bb80; }
+.hero-visual > img { object-position: center 58%; display: block; }
+.opening-name { font-size: clamp(62px, 10vw, 118px); color: #412a19; }
+.opening-kicker, .opening-tagline { color: #4d3626; }
+.collection { background: #eee0cc; }
+.film-section { background: #f1e5d4; }
+.contact-section { background: #70472b; }
+.button-dark { background: #54351f; }
+.scent-copy h2 em, .section-heading h2 em, .intro h2 em, .process h2 em { color: #8b5429; }
+.scent-photo img { display: block; object-position: center; }
+.scent-link { display: inline-block; margin-top: 14px; }
